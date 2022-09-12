@@ -21,6 +21,7 @@ dependencies:
   # Functional programming thingies
   dartz: ^0.10.1
   # Remote API
+  data_connection_checker: ^0.3.4 //? internetin olup olmadığına hangi paketle bakıyorsunuz
   connectivity: ^3.0.6 # //? bu paket discontinued olmuş
   http: ^0.13.4
   # Local cache
