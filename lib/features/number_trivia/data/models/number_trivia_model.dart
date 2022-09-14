@@ -13,6 +13,8 @@ class NumberTriviaModel extends NumberTrivia {
     );
   }
 
+  NumberTriviaModel.fromJsona(Map<String, dynamic> json) : super(text: json["text"],number: json["number"].toInt(),); //!
+
 
   Map<String, dynamic> toJson(){
     return {
@@ -20,4 +22,9 @@ class NumberTriviaModel extends NumberTrivia {
       'number' : number,
     };
   }
+}
+
+
+void main(List<String> args) {
+  
 }

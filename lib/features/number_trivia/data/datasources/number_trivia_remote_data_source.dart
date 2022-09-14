@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_tdd_and_clean_architecture/core/error/exceptions.dart';
+import '../../../../core/error/exceptions.dart';
 
 import '../models/number_trivia_model.dart';
 import 'package:http/http.dart' as http;

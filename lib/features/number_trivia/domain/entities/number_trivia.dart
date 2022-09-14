@@ -10,7 +10,6 @@ class NumberTrivia extends Equatable {
   });
   
   
-  //! equatable kullanımım doğru mu ? videoda super dan aktardı
   @override
   List<Object?> get props => [text,number];
 }
