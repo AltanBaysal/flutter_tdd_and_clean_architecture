@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//?bunlara base widget yaz
+
 class MessageDisplay extends StatelessWidget {
   const MessageDisplay({
     required this.message,

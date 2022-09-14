@@ -11,4 +11,8 @@ class FailureText{
 
 class EnglishText{
   static const String emptyTriviaText = "Start searching!";
+  static const String numberTrivia = "Number Trivia";
+  static const String inputNumber = "Input Number";
+  static const String search = "Search";
+  static const String getRandomTrivia = "Number Trivia";
 }

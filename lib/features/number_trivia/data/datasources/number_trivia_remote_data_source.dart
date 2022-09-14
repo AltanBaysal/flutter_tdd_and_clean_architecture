@@ -21,7 +21,7 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
 
   @override
   Future<NumberTriviaModel> getRandomNumberTrivia() {
-    return _getTriviaFromUrl('http://numbersapi.com/random');
+    return _getTriviaFromUrl('http://numbersapi.com/random'); //? url nerde saklamalıyım
   }
 
 

@@ -6,6 +6,7 @@ class NumberTriviaModel extends NumberTrivia {
     required int number,
   }) : super(text: text, number: number);
 
+  
   factory NumberTriviaModel.fromJson(Map<String, dynamic> json) {
     return NumberTriviaModel(
       text: json['text'],

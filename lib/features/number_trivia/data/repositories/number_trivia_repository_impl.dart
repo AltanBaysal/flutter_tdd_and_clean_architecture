@@ -9,7 +9,7 @@ import '../datasources/number_trivia_remote_data_source.dart';
 import '../models/number_trivia_model.dart';
 
 
-typedef _ConcreteOrRandomChooser = Future<NumberTriviaModel> Function();//?
+typedef _ConcreteOrRandomChooser = Future<NumberTriviaModel> Function();
 
 class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   final NumberTriviaRemoteDataSource remoteDataSource;
@@ -31,7 +31,7 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
 
   @override
   Future<Either<Failure, NumberTrivia>> getRandomNumberTrivia() async {
-    return await _getTrivia(remoteDataSource.getRandomNumberTrivia);//d 
+    return await _getTrivia(remoteDataSource.getRandomNumberTrivia);
   }
 
 

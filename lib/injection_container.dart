@@ -1,5 +1,5 @@
-// ignore: import_of_legacy_library_into_null_safe
-import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+
 import 'core/network/network_info.dart';
 import 'core/util/input_converter.dart';
 import 'features/number_trivia/data/datasources/number_trivia_remote_data_source.dart';
@@ -13,12 +13,12 @@ import 'package:http/http.dart' as http;
 import 'features/number_trivia/data/datasources/number_trivia_local_data_source.dart';
 import 'features/number_trivia/domain/repositories/number_trivia_repository.dart';
 
-final sl = GetIt
-    .instance; //? bunu singelton yapmamı ister misin global yapmak tanımlamak doğru gelmedi
+final sl = GetIt.instance;
 
 Future<void> init() async {
   initFeatures();
   initCore();
+  await initExternal();
 }
 
 void initFeatures() {
@@ -59,12 +59,10 @@ void initCore() {
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
 }
 
-void initExternal(){
-  sl.registerLazySingleton(() async{
-    final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    return sharedPreferences;
-  });
+Future<void> initExternal() async{
+  final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  sl.registerLazySingleton(() => sharedPreferences);
 
   sl.registerLazySingleton(() => http.Client());
-  sl.registerLazySingleton(() => DataConnectionChecker());
+  sl.registerLazySingleton(() => InternetConnectionChecker());
 }

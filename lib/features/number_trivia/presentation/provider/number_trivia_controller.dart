@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_tdd_and_clean_architecture/core/usecases/usecase.dart';
 import '../../../../core/constants/text_constants.dart';
@@ -35,8 +34,8 @@ class NumberTriviaController with ChangeNotifier {
         );
       },
       (integer) async {
-        _setCurrentTriviaState(numberTriviaState: Loading());
         triviaTextEditingController.clear();
+        _setCurrentTriviaState(numberTriviaState: Loading());
         final failureOrTrivia = await getConcreteNumberTrivia(
           Params(number: integer),
         );
@@ -71,7 +70,7 @@ class NumberTriviaController with ChangeNotifier {
   }
 }
 
-//?
+//? bunu buraya koydum ama doğru gelmedi
 extension on Failure {
   String get text {
     switch (runtimeType) {
